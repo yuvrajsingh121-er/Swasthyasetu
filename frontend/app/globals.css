@@ -1,0 +1,4 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{margin:0;background:#eef4ef;color:#193c3a;font-family:Arial,sans-serif}.font-display{font-family:Georgia,serif}.option{width:100%;border:1px solid #d7e3da;border-radius:12px;padding:14px;text-align:left;background:white;transition:.15s}.option:hover,.option.selected{border-color:#146a5a;background:#edf8f0}.primary{border-radius:999px;background:#146a5a;color:white;padding:13px 20px;font-weight:700}.primary:disabled{background:#9eafa7}.sensor-video{width:100%;aspect-ratio:4/3;object-fit:cover;background:#193c3a;border-radius:14px}

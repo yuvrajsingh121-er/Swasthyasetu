@@ -1,0 +1,4 @@
+# Python 3.14 needs recent prebuilt pydantic-core wheels on Windows.
+fastapi>=0.120.0
+uvicorn[standard]>=0.35.0
+pydantic>=2.12.0

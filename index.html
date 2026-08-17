@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwasthyaSetu — Early care, closer to home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .tele-modal[hidden]{display:none!important}
+      .camera-modal{max-width:470px}.camera-note{margin:10px auto 18px!important}.camera-stage{position:relative;overflow:hidden;border-radius:16px;background:#173d3b;aspect-ratio:4/3}.camera-stage video{width:100%;height:100%;object-fit:cover}.finger-guide{position:absolute;top:25%;left:27%;width:46%;height:36%;display:grid;place-items:center;text-align:center;border:2px dashed #e8f2dd;border-radius:16px;color:#fff;font-size:14px;line-height:1.35}.camera-state{position:absolute;left:50%;bottom:13px;transform:translateX(-50%);white-space:nowrap;border-radius:20px;background:#193c3ad9;color:#fff;padding:7px 11px;font-size:11px}.sensor-result{background:#eaf5ed;border-radius:10px;padding:10px!important;color:#176a5a!important;font-size:12px!important}
+    </style>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <a class="brand" href="#home" aria-label="SwasthyaSetu home"><span class="brand-mark">✦</span><span>Swasthya<span>Setu</span></span></a>
+        <div class="lang"><span>अ</span> हिंदी <span class="chev">⌄</span></div>
+        <button class="help-btn">Need help? <b>1800-212-CARE</b></button>
+      </header>
+
+      <section id="home" class="hero">
+        <div class="eyebrow"><i></i> AI-ASSISTED HEALTH SCREENING</div>
+        <h1>Early care,<br /><em>closer to home.</em></h1>
+        <p class="hero-copy">A simple health check for you and your family. Understand risk early and connect with care nearby.</p>
+        <div class="hero-actions">
+          <button class="primary" id="startCheck">Start a health check <span>→</span></button>
+          <button class="text-btn" id="howItWorks">How it works <span class="play">▶</span></button>
+        </div>
+        <div class="trust-row"><span>🔒 Private & secure</span><span>◉ Works with basic phones</span><span>✓ Free to use</span></div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div><div class="hill back"></div><div class="hill front"></div>
+          <div class="clinic"><div class="roof"></div><div class="cross">+</div><div class="door"></div></div>
+          <div class="tree t1"><b></b><i></i></div><div class="tree t2"><b></b><i></i></div><div class="path"></div>
+        </div>
+      </section>
+
+      <section class="feature-strip">
+        <article><span class="icon coral">⌁</span><div><h3>Check your risk</h3><p>Answer a few simple questions about symptoms and health.</p></div></article>
+        <article><span class="icon yellow">⌖</span><div><h3>Find care nearby</h3><p>See available clinics, doctors, and medicine centres.</p></div></article>
+        <article><span class="icon green">◌</span><div><h3>Speak to a doctor</h3><p>Connect with a trusted doctor from your phone.</p></div></article>
+      </section>
+
+      <section class="screening" id="screening">
+        <aside class="screen-side"><span class="step-label">HEALTH CHECK</span><h2>Let’s understand<br />how you’re <em>feeling.</em></h2><p>This is not a diagnosis. It helps us suggest the right next step.</p><div class="progress"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div><small>About 2 minutes · Your answers stay private</small></aside>
+        <div class="screen-card" id="questionCard">
+          <div class="card-top"><span id="stepText">STEP 1 OF 3</span><button id="backBtn" class="back" hidden>← Back</button></div>
+          <div id="questionContent"></div>
+          <div class="card-footer"><span id="hint">Select all that apply</span><button class="primary next" id="nextBtn" disabled>Continue <span>→</span></button></div>
+        </div>
+      </section>
+
+      <section class="results" id="results" hidden>
+        <div class="result-intro"><span class="eyebrow"><i></i> YOUR HEALTH SUMMARY</span><h2 id="resultHeading">Your results</h2><p id="resultText"></p></div>
+        <div class="result-grid"><article class="risk-card"><div class="risk-top"><span id="riskPill">LOW PRIORITY</span><span>AI SCREENING</span></div><div class="ring" id="riskScore"><b>--</b><small>risk score</small></div><h3 id="riskTitle"></h3><p id="riskAdvice"></p></article><article class="care-card"><div class="care-heading"><span class="clinic-icon">✚</span><div><small>NEAREST AVAILABLE CARE</small><h3>Community Health Centre</h3></div><strong>1.8 km</strong></div><p>Rampur Road · Open now until 6:00 PM</p><div class="care-actions"><button class="outline">⌖ Directions</button><button class="primary" id="teleButton">Talk to a doctor →</button></div></article></div>
+        <button class="restart" id="restart">← Start another health check</button>
+      </section>
+
+      <section class="tele-modal" id="teleModal" hidden><div class="modal"><button class="close" id="closeModal">×</button><div class="doctor-avatar">👩🏽‍⚕️</div><span class="eyebrow"><i></i> TELECONSULTATION</span><h2>Dr. Meera is available now.</h2><p>Your screening summary will be shared securely with the doctor.</p><div class="call-meta"><span>◉ Hindi & English</span><span>◷ ~ 5 min wait</span></div><button class="primary full" id="confirmCall">Start secure call →</button></div></section>
+      <section class="tele-modal" id="cameraModal" hidden><div class="modal camera-modal"><button class="close" id="closeCamera">×</button><span class="eyebrow"><i></i> PULSE SENSOR PROTOTYPE</span><h2>Finger pulse check</h2><p class="camera-note">Place one fingertip gently over the rear camera and flash. Keep still for 20 seconds. This is an estimate only—not a medical device or diagnosis.</p><div class="camera-stage"><video id="cameraFeed" autoplay playsinline muted></video><div class="finger-guide">Place finger<br />over camera</div><div class="camera-state" id="cameraState">Preparing rear camera…</div></div><canvas id="pulseCanvas" hidden></canvas><button class="primary full" id="scanCamera">Start 20-second pulse check</button><p class="sensor-result" id="sensorResult" hidden></p></div></section>
+      <div class="toast" id="toast">Your secure consultation request has been sent.</div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
