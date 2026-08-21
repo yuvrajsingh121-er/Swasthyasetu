@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const API = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000";
+const API =
+  process.env.NEXT_PUBLIC_API_URL ??
+  "https://swasthya-setu-api-w8iy.onrender.com";
 const SYMPTOMS = [
   "Fever or feeling hot", "Persistent cough or breathing trouble", "Feeling very tired or weak", "Headache or body ache",
   "Stomach pain, vomiting, or loose motions", "Chest pain or pressure", "Rash, body pain, or bleeding", "Dizziness or fainting",
