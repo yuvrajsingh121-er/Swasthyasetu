@@ -25,7 +25,7 @@ async function showResults(){
   $('nextBtn').disabled = true;
   $('nextBtn').textContent = 'Analysing your health check…';
   try {
-    const response = await fetch('/api/triage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ answers }) });
+    const response = await fetch('https://swasthya-setu-api-w8iy.onrender.com/api/v1/triage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ answers }) });
     if (!response.ok) throw new Error('Triage request failed');
     const { result } = await response.json();
     $('riskPill').textContent = `${result.priority} PRIORITY`;
