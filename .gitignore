@@ -1,4 +1,19 @@
-node_modules/
-frontend/node_modules/
-.next/
+# Environment files
 .env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# Next.js
+node_modules/
+.next/
+out/
+
+# Local files
+*.log

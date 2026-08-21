@@ -22,7 +22,7 @@ DEFAULT_MODEL = {
         "Feeling very tired or weak": 10,
         "Stomach pain, vomiting, or loose motions": 10,
         "Headache or body ache": 5,
-        "Chest pain or pressure": 45,
+        "Chest pain or pressure": 90,
         "Rash, body pain, or bleeding": 35,
         "Dizziness or fainting": 30,
     },
